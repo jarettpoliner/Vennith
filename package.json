@@ -1,0 +1,23 @@
+{
+  "name": "vennith",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node scripts/build.mjs",
+    "start": "node dist/server.js",
+    "dev": "npm run build && npm start",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "validate": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "@types/node": "24.10.0",
+    "playwright-core": "1.56.1",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

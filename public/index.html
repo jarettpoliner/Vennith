@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Know yourself. Find your people." />
+    <title>Vennith — Know yourself. Find your people.</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/"
+        >Vennith<span class="venn-mark" aria-hidden="true"></span
+      ></a>
+      <nav aria-label="Main">
+        <button class="nav active" data-tab="type">Type</button
+        ><button class="nav" data-tab="compare">Sync</button
+        ><button class="nav" data-tab="discover">Discover</button
+        ><button class="nav" data-tab="connect">Connect your AI ↗</button>
+      </nav>
+      <span class="demo">FICTIONAL PEOPLE · REAL CURIOSITY</span>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">KNOW YOURSELF. FIND YOUR PEOPLE.</p>
+          <h1>Good chemistry.<br /><em>Less guesswork.</em></h1>
+          <p class="intro">
+            Discover your Vennith type. Explore what brings you together—and
+            what makes you different.
+          </p>
+          <div class="hero-actions">
+            <button id="begin" class="primary">Discover your type ↗</button
+            ><span>No account. No private conversations.</span>
+          </div>
+        </div>
+        <div
+          class="hero-art"
+          aria-label="Illustration of two complementary personalities"
+        >
+          <div class="orbit"></div>
+          <div class="art-card apricot">
+            <span>THE EXPLORER IN YOU</span><b>↗</b>
+            <h2>Open to<br />possibility.</h2>
+            <small>Different rhythms. Shared direction.</small>
+          </div>
+          <div class="art-card sage">
+            <span>THE CONNECTION BETWEEN US</span><b>✳</b>
+            <h2>Better,<br />together.</h2>
+            <small>A little curiosity goes a long way.</small>
+          </div>
+          <span class="art-note"
+            >Not written in the stars.<br />Explored by you.</span
+          >
+        </div>
+      </section>
+      <div class="trust">
+        <span>✧ Your profile, your approval</span
+        ><span>◌ Explainable, exploratory scores</span
+        ><span>↗ Designed for human connection</span>
+      </div>
+      <section id="type" class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">VENNITH TYPE</p>
+            <h2>A little more you.</h2>
+            <p>
+              Discover the patterns in your approved values and preferences.
+              Four original archetypes, endless human nuance.
+            </p>
+          </div>
+          <button id="type-start" class="primary">
+            Create my personality card ↗
+          </button>
+        </div>
+        <div class="archetype-gallery">
+          <article>
+            <span>↗</span>
+            <h3>The Pathfinder</h3>
+            <p>Possibility. Adventure. Self-direction.</p>
+          </article>
+          <article>
+            <span>☀</span>
+            <h3>The Hearthkeeper</h3>
+            <p>Care. Community. Steadiness.</p>
+          </article>
+          <article>
+            <span>✳</span>
+            <h3>The Maker</h3>
+            <p>Imagination. Creativity. Growth.</p>
+          </article>
+          <article>
+            <span>✧</span>
+            <h3>The Luminary</h3>
+            <p>Questions. Curiosity. Discovery.</p>
+          </article>
+        </div>
+        <p class="fine">
+          A playful, template-based interpretation—not a validated personality
+          assessment. Your AI can help draft a profile; you approve every
+          attribute.
+        </p>
+      </section>
+      <section id="compare" class="panel" hidden>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">VENNITH SYNC</p>
+            <h2>How compatible are we?</h2>
+            <p>Two perspectives. A new way to see the connection.</p>
+          </div>
+          <label
+            >Our connection<select id="context">
+              <option value="romantic">Romantic</option>
+              <option value="friendship">Friendship</option>
+              <option value="professional">Professional</option>
+              <option value="general">General</option>
+            </select></label
+          >
+        </div>
+        <div class="profiles">
+          <article class="profile-card">
+            <div class="card-top">
+              <span class="number">01</span><span>YOUR PERSPECTIVE</span>
+            </div>
+            <h3>Your Vennith profile</h3>
+            <p class="muted">
+              Start with a fictional example or make it yours.
+            </p>
+            <div id="first-form"></div>
+            <button class="text-button" id="import-first">
+              Import assistant JSON ↗</button
+            ><label class="consent"
+              ><input type="checkbox" id="approve-first" /> I am 18+ and approve
+              sending these structured attributes. For a sample, I approve this
+              fictional profile.</label
+            >
+          </article>
+          <div class="between">&</div>
+          <article class="profile-card second">
+            <div class="card-top">
+              <span class="number">02</span><span>ANOTHER PERSPECTIVE</span>
+            </div>
+            <h3>Meet in the middle</h3>
+            <label>Try a fictional person<select id="person"></select></label>
+            <div id="second-form"></div>
+            <button class="text-button" id="import-second">
+              Import voluntarily shared JSON ↗</button
+            ><label class="consent"
+              ><input type="checkbox" id="approve-second" /> This person is 18+
+              and independently approved sharing these attributes, or this is a
+              fictional sample.</label
+            >
+          </article>
+        </div>
+        <div class="action-row">
+          <button id="compare-button" class="primary">
+            Explore our compatibility ↗</button
+          ><button id="type-button" class="secondary">
+            See my Vennith type</button
+          ><button id="export-button" class="secondary">
+            Export my share card ↓
+          </button>
+        </div>
+        <p class="fine">
+          Only the selected attributes are sent to this stateless service. No
+          accounts or profile storage. Do not enter sensitive information.
+        </p>
+        <div id="feedback" role="status" aria-live="polite"></div>
+        <div id="result"></div>
+      </section>
+      <section id="discover" class="panel" hidden>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">VENNITH DISCOVER</p>
+            <h2>Your kind of people.</h2>
+            <p>
+              Explore a fictional cohort. No real accounts, introductions, or
+              messaging.
+            </p>
+          </div>
+        </div>
+        <div class="filters">
+          <label
+            >Looking for<select id="mode">
+              <option value="romantic">Dating</option>
+              <option value="friendship">Friendship</option>
+            </select></label
+          ><label
+            >Where<select id="scope">
+              <option value="city">My city</option>
+              <option value="radius">Within a radius</option>
+              <option value="worldwide">Worldwide</option>
+            </select></label
+          ><label
+            >Radius in km<input
+              id="radius"
+              type="number"
+              min="1"
+              max="20000"
+              value="100" /></label
+          ><button id="discover-button" class="primary">
+            Find connections ↗
+          </button>
+        </div>
+        <p class="fine">
+          Uses your first profile in Compare. Review and approve it there first.
+          Radius uses city centers, never your precise location.
+        </p>
+        <div id="discovery-status" role="status"></div>
+        <div id="matches" class="match-grid"></div>
+      </section>
+      <section id="connect" class="panel" hidden>
+        <p class="eyebrow">BRING YOUR OWN ASSISTANT</p>
+        <h2>Your AI knows context.<br />You choose what to share.</h2>
+        <p class="intro">
+          Vennith never connects to your conversation history. Ask an
+          MCP-compatible assistant to prepare a minimal profile, review every
+          field, then approve it.
+        </p>
+        <ol>
+          <li>
+            Add this site's <code id="endpoint"></code> as a custom remote MCP
+            server in a client that supports Streamable HTTP.
+          </li>
+          <li>
+            Ask for <code>get_profile_schema</code>. Draft only attributes you
+            authorize.
+          </li>
+          <li>
+            Review and correct the card. Explicitly approve it before any
+            comparison or match call.
+          </li>
+          <li>
+            Use <code>get_personality_archetype</code>,
+            <code>compare_compatibility</code>, or
+            <code>find_compatible_matches</code>.
+          </li>
+        </ol>
+        <p>
+          ChatGPT: Settings → Apps → developer mode, if available for your plan
+          and workspace → create a custom app using the MCP URL. Claude:
+          Settings → Connectors → add a custom connector using the MCP URL, if
+          available. Menu names and custom-connector access depend on your
+          client and administrator.
+        </p>
+        <p>
+          These are generic MCP connections, not native account integrations
+          with ChatGPT, Claude, Gemini, or Grok. No OAuth, passwords, or history
+          access. A local HTTP endpoint needs a supported local client or an
+          authorized HTTPS deployment for remote clients.
+        </p>
+        <button id="copy-prompt" class="secondary">
+          Copy assistant prompt
+        </button>
+        <p id="connect-status" role="status"></p>
+      </section>
+      <section class="manifesto">
+        <p class="eyebrow">HUMANS, NOT SCORES</p>
+        <h2>A starting point.<br /><em>Never a verdict.</em></h2>
+        <p>
+          Personality types are playful interpretations. Compatibility is an
+          exploratory heuristic, not a validated prediction. The best part of
+          any connection is still yours to discover.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="/"
+        >Vennith<span class="venn-mark" aria-hidden="true"></span
+      ></a>
+      <p>
+        Synthetic, stateless prototype · Adults 18+ · No real-user messaging
+      </p>
+      <a href="https://github.com/jarettpoliner/Eros" rel="noreferrer"
+        >Open source ↗</a
+      >
+    </footer>
+    <dialog id="import-dialog">
+      <form method="dialog">
+        <h2>Review an approved profile</h2>
+        <p>
+          Paste structured Vennith JSON only. Never paste conversations or
+          private notes. Imported approval flags are reset; review the fields
+          and approve again.
+        </p>
+        <textarea
+          id="import-json"
+          rows="12"
+          aria-label="Profile JSON"
+        ></textarea>
+        <p id="import-error" role="alert"></p>
+        <div class="action-row">
+          <button value="cancel" class="secondary">Cancel</button
+          ><button type="button" id="apply-import" class="primary">
+            Review fields
+          </button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
